@@ -1,0 +1,31 @@
+# @package _global_
+
+defaults:
+  - model: clip_base
+  - train: default
+  - eval: default
+  - data: toy_dataset
+  - _self_
+
+# Experiment settings
+experiment_name: "multimodal_representation_learning"
+seed: 42
+device: auto  # auto, cuda, mps, cpu
+
+# Paths
+data_dir: "data"
+output_dir: "outputs"
+checkpoint_dir: "checkpoints"
+log_dir: "logs"
+asset_dir: "assets"
+
+# Logging
+log_level: "INFO"
+use_wandb: false
+wandb_project: "multimodal-representation-learning"
+wandb_entity: null
+
+# Safety and disclaimers
+safety_disclaimer: true
+filter_nsfw: true
+max_generation_length: 512

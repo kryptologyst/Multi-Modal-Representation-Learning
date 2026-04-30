@@ -1,0 +1,33 @@
+# @package model
+
+_target_: src.models.clip_model.CLIPModel
+
+# Model architecture
+model_name: "openai/clip-vit-base-patch32"
+image_encoder: "vit"
+text_encoder: "transformer"
+embedding_dim: 512
+projection_dim: 512
+
+# Training parameters
+learning_rate: 1e-4
+weight_decay: 0.01
+temperature: 0.07
+contrastive_loss_weight: 1.0
+
+# Model specific settings
+max_text_length: 77
+image_size: 224
+patch_size: 32
+num_layers: 12
+num_heads: 8
+hidden_dim: 768
+
+# Dropout and regularization
+dropout: 0.1
+attention_dropout: 0.1
+
+# Pretrained weights
+use_pretrained: true
+freeze_encoder: false
+fine_tune_layers: -1  # -1 means fine-tune all layers

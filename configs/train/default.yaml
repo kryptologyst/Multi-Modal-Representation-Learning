@@ -1,0 +1,40 @@
+# @package train
+
+# Training parameters
+batch_size: 32
+num_epochs: 10
+gradient_accumulation_steps: 1
+max_grad_norm: 1.0
+
+# Learning rate scheduling
+lr_scheduler: "cosine"
+warmup_steps: 1000
+warmup_ratio: 0.1
+
+# Mixed precision training
+use_amp: true
+amp_opt_level: "O1"
+
+# Checkpointing
+save_every_n_epochs: 1
+save_top_k: 3
+monitor_metric: "val_loss"
+monitor_mode: "min"
+
+# Early stopping
+early_stopping_patience: 5
+early_stopping_min_delta: 0.001
+
+# Validation
+val_check_interval: 0.5  # Validate every 50% of epoch
+val_batch_size: 64
+
+# Data loading
+num_workers: 4
+pin_memory: true
+persistent_workers: true
+
+# Logging
+log_every_n_steps: 100
+log_images_every_n_epochs: 5
+max_images_to_log: 8

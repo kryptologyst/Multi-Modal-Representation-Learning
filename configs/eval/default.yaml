@@ -1,0 +1,42 @@
+# @package eval
+
+# Evaluation metrics
+metrics:
+  - "recall_at_1"
+  - "recall_at_5"
+  - "recall_at_10"
+  - "mean_average_precision"
+  - "median_rank"
+  - "clip_score"
+
+# Cross-modal evaluation
+evaluate_cross_modal: true
+text_to_image: true
+image_to_text: true
+
+# Evaluation settings
+eval_batch_size: 64
+num_workers: 4
+pin_memory: true
+
+# Retrieval evaluation
+top_k_values: [1, 5, 10, 50, 100]
+compute_similarity_matrix: true
+save_embeddings: true
+
+# Qualitative evaluation
+generate_examples: true
+num_examples: 20
+save_attention_maps: true
+save_retrieval_results: true
+
+# Benchmark datasets
+benchmark_datasets:
+  - "coco_captions"
+  - "flickr30k"
+  - "mscoco"
+
+# Evaluation output
+save_results: true
+results_format: "json"
+create_leaderboard: true
